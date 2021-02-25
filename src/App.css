@@ -1,38 +1,130 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  padding-top: 10vh;
+  max-width: 80%;
+  margin: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+.spinner {
+  border-radius: 50%;
+  margin: auto;
+  border: 10px solid #4072FE;
+  border-left: 10px solid white;
+  height: 50px;
+  width: 50px;
+  margin-top: 50vh;
+  animation: rotate 2s infinite linear;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
+@keyframes rotate {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+
+  100% {
     transform: rotate(360deg);
   }
+}
+
+.bar_wrapper {
+  background-color: #4072FE;
+  color: white;
+  padding: 5px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.bar_wrapper input {
+  margin-left: 10px;
+}
+
+table {
+  margin: auto;
+  width: 100%;
+  border-collapse: collapse;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+
+}
+
+th {
+  background-color: #4072FE;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+th:nth-child(3) {
+  cursor: not-allowed;
+}
+
+.descending:not(:nth-child(3)):after {
+  position: absolute;
+  content: "▼";
+  margin-left: 5px;
+}
+
+.ascending:not(:nth-child(3)):after {
+  position: absolute;
+  content: "▲" !important;
+  margin-left: 5px;
+}
+
+tr {
+  border-bottom: 1px solid black;
+}
+
+tr:nth-child(even) {
+  background-color: lightgray;
+  border-bottom: 1px solid black;
+}
+
+td {
+  padding: 3px;
+  text-align: left;
+}
+
+ul {
+  display: flex;
+   flex-direction: row;
+    flex-wrap: wrap;
+  margin-top: 5px;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  background-color: #4072FE;
+  color: white;
+  margin-right: 2px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  transform: scale(1.1);
+  font-weight: bold;
+  transition: all 0.1s;
+}
+
+.warning {
+  position: absolute;
+  background-color: white !important;
+  border: none !important;
+;
 }
